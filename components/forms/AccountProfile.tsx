@@ -24,6 +24,7 @@ import { useUploadThing } from "@/lib/uploadthing";
 import { isBase64Image } from "@/lib/utils";
 
 import { UserValidation } from "@/lib/validations/user";
+import { updateUser } from "@/lib/actions/user.actions";
 // import { updateUser } from "@/lib/actions/user.actions";
 
 interface Props {
@@ -91,7 +92,22 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       }
     }
 
-    // TODO: Update user profile
+    // Update user profile
+
+    await updateUser({
+      userId: user.id,
+      name: values.name,
+      username: values.username,
+      bio: values.bio,
+      image: values.profile_photo,
+      path: pathname,
+    });
+
+    if (pathname === "/profile/edit") {
+      router.back();
+    } else {
+      router.push("/");
+    }
 
     // console.log("values", values);
   };
