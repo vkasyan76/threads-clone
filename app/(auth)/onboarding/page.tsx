@@ -1,6 +1,9 @@
 import AccountProfile from "@/components/forms/AccountProfile";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 
+import { redirect } from "next/navigation";
+import { fetchUser } from "@/lib/actions/user.actions";
+
 // import { clerkClient } from "@clerk/nextjs/server";
 
 async function Page() {
@@ -15,7 +18,8 @@ async function Page() {
   //clerk.com/docs/references/backend/user/get-user
 
   // DatabaseInfo:
-  const userInfo = {};
+  const userInfo = await fetchUser(userId);
+  if (userInfo?.onboarded) redirect("/");
 
   const userData = {
     // id: userId,
