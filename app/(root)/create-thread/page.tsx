@@ -3,9 +3,6 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-// import PostThread from "@/components/forms/PostThread";
-// import { fetchUser } from "@/lib/actions/user.actions";
-
 async function Page() {
   const { userId, sessionClaims } = auth();
   if (!userId) return null; // to avoid typescript warnings
