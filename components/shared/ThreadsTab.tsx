@@ -41,7 +41,7 @@ async function ThreadsTab({ currentUserId, accountId, accountType }: Props) {
   let result: Result;
 
   result = await fetchUserPosts(accountId);
-  console.log("Threads fetched by User", result);
+  //   console.log("Threads fetched by User", result);
 
   //   console.log("Threads Authors info", result.threads);
 
