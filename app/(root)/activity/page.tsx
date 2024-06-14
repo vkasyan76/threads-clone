@@ -20,7 +20,7 @@ const Page = async () => {
 
   const activity = await getActivity(userInfo._id);
 
-  console.log("Activity", activity);
+  // console.log("Activity", activity);
 
   return (
     <>
