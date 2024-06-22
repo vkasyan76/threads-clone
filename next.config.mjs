@@ -8,11 +8,12 @@ const nextConfig = {
   //   serverActions: true,
   //   serverComponentsExternalPackages: ["mongoose"],
   // },
-  typescript: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has typescript errors.
-    ignoreDuringBuilds: true,
-  },
+
+  // Warning: This allows production builds to successfully complete even if
+  // your project has typescript errors.
+  // typescript: {
+  //   ignoreDuringBuilds: true,
+  // },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.

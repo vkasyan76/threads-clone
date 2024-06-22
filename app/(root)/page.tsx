@@ -9,7 +9,8 @@ export default async function Home({
   searchParams: { [key: string]: string | undefined };
 }) {
   const { userId, sessionClaims } = auth();
-  if (!userId) return null; // to avoid typescript warnings
+  if (!userId) return null;
+  // to avoid typescript warnings
 
   const user = await clerkClient.users.getUser(userId);
   const result = await fetchPosts(
